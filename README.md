@@ -16,6 +16,8 @@
 ---
 <img width="865" height="409" alt="image" src="https://github.com/user-attachments/assets/dda13419-d99e-4ae3-93f1-8e147312b16f" />
 <img width="865" height="109" alt="image" src="https://github.com/user-attachments/assets/efc9b1df-9602-4a7d-b51e-8d60c52e543f" />
+
+
 ### Vulnerability Description
 During the security assessment of the application, a critical buffer overflow vulnerability was identified in the  /goform/WifiBasicSet endpoint. The vulnerability stems from the formWifiBasicSet() function, This function retrieves the security_5g parameter from a POST request.The strcpy function does not check the size of the target buffer when processing the security_5g parameter. Since *s1 is limited to 256 bytes, providing input larger than this size can overwrite adjacent memory. This flaw can lead to application crashes, memory corruption, or arbitrary code execution. The vulnerability introduces serious risks to device stability, data confidentiality, and overall system security, and requires immediate remediation to prevent potential exploitation.
 
